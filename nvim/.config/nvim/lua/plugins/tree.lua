@@ -30,6 +30,13 @@ return {
     opts = {
       close_if_last_window = true,
 
+      default_component_configs = {
+          indent = {
+              indent_size = 1,
+              with_markers = false,
+          },
+      },
+
       filesystem = {
 
         follow_current_file = {
