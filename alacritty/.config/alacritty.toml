@@ -1,0 +1,21 @@
+[window]
+option_as_alt = "Both"
+dimensions = { columns = 200, lines = 55 }
+
+[font]
+size = 14
+
+[font.normal]
+family = "GeistMono Nerd Font"
+
+[font.bold]
+family = "GeistMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "GeistMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "GeistMono Nerd Font"
+style = "Bold Italic"
