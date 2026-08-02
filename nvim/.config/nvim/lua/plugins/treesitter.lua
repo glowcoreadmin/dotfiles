@@ -1,46 +1,65 @@
+local parsers = {
+    "typescript",
+    "tsx",
+    "javascript",
+    "lua",
+    "markdown",
+    "markdown_inline",
+    "json",
+    "yaml",
+    "html",
+    "css",
+    "bash",
+    "python",
+    "sql"
+}
+
+local filetypes = {
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "lua",
+    "markdown",
+    "json",
+    "yaml",
+    "html",
+    "css",
+    "sh",
+    "python",
+    "sql",
+}
+
 return {
+    {
+        "nvim-treesitter/nvim-treesitter",
 
-    "nvim-treesitter/nvim-treesitter",
+        lazy = false,
+        build = ":TSUpdate",
 
-    branch = "main",
-    build = ":TSUpdate",
+        config = function()
+            require("nvim-treesitter").install(parsers)
 
-    config = function()
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = filetypes,
+                callback = function(args)
+                    local ft = vim.bo[args.buf].filetype
+                    local lang = vim.treesitter.language.get_lang(ft) or ft
 
-        local treesitter = require("nvim-treesitter")
+                    local ok, err = pcall(
+                        vim.treesitter.start,
+                        args.buf,
+                        lang
+                    )
 
-        treesitter.setup()
-
-        treesitter.install({
-            "lua",
-            "vim",
-            "vimdoc",
-            "javascript",
-            "typescript",
-            "tsx",
-            "html",
-            "css",
-            "json",
-            "markdown",
-            "markdown_inline",
-        })
-
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = {
-                "lua",
-                "vim",
-                "javascript",
-                "typescript",
-                "typescriptreact",
-                "html",
-                "css",
-                "json",
-                "markdown",
-            },
-            callback = function()
-                vim.treesitter.start()
-            end,
-        })
-
-    end,
+                    if not ok then
+                        vim.notify(
+                            ("Tree-sitter failed for %s: %s"):format(lang, err),
+                            vim.log.levels.WARN
+                        )
+                    end
+                end,
+            })
+        end,
+    }
 }
