@@ -18,6 +18,12 @@ return {
 
             capabilities = capabilities,
 
+            init_options = {
+                preferences = {
+                    quotePreference = "single",
+                },
+            },
+
             settings = {
                 typescript = {
                     preferences = {
