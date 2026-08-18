@@ -19,6 +19,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.smoothscroll = true
 vim.opt.scrolloff = 12
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
+
 require("config.diagnostics")
 require("config.keymaps")
 require("config.lazy")

@@ -18,17 +18,25 @@ return {
 
             capabilities = capabilities,
 
+            init_options = {
+                preferences = {
+                        includePackageJsonAutoImports = "on",
+                        includeCompletionsForModuleExports = true,
+                        includeCompletionsForImportStatements = true,
+                },
+            },
+
             settings = {
                 typescript = {
                     preferences = {
                         importModuleSpecifierEnding = "minimal",
-                        importModuleSpecifier = "relative",
+                        importModuleSpecifier = "non-relative",
                     },
                 },
                 javascript = {
                     preferences = {
                         importModuleSpecifierEnding = "minimal",
-                        importModuleSpecifier = "relative",
+                        importModuleSpecifier = "non-relative",
                     }
                 },
             },
