@@ -20,9 +20,10 @@ return {
 
             init_options = {
                 preferences = {
-                        includePackageJsonAutoImports = "on",
-                        includeCompletionsForModuleExports = true,
-                        includeCompletionsForImportStatements = true,
+                    includePackageJsonAutoImports = "on",
+                    includeCompletionsForModuleExports = true,
+                    includeCompletionsForImportStatements = true,
+                    quotePreference = "single",
                 },
             },
 
