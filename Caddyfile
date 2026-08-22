@@ -1,0 +1,29 @@
+http://glowcore.test {
+	@api path /api /api/*
+
+	handle @api {
+		uri strip_prefix /api
+		reverse_proxy localhost:3003
+	}
+
+	handle {
+		reverse_proxy localhost:8081
+	}
+}
+
+http://kpulse.glowcore.test {
+	@api path /api /api/*
+
+	handle @api {
+		uri strip_prefix /api
+		reverse_proxy localhost:3003
+	}
+
+	handle {
+		reverse_proxy localhost:8081
+	}
+}
+
+http://api.glowcore.test {
+	reverse_proxy localhost:3003
+}
