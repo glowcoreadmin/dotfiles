@@ -33,7 +33,7 @@ return {
       default_component_configs = {
           indent = {
               indent_size = 2,
-              with_markers = false,
+              with_markers = true,
           },
       },
 
