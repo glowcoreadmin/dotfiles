@@ -1,0 +1,26 @@
+[font]
+size = 11
+
+[font.normal]
+family = "GeistMono Nerd Font"
+
+[font.bold]
+family = "GeistMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "GeistMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "GeistMono Nerd Font"
+style = "Bold Italic"
+
+[terminal.shell]
+program = "wsl.exe"
+args = ["-d", "Ubuntu"]
+
+[keyboard]
+bindings = [
+  { key = "Space", mods = "Control", chars = "\u0000" }
+]
