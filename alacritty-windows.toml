@@ -18,7 +18,7 @@ style = "Bold Italic"
 
 [terminal.shell]
 program = "wsl.exe"
-args = ["-d", "Ubuntu"]
+args = ["-d", "Ubuntu", "--cd", "~"]
 
 [keyboard]
 bindings = [

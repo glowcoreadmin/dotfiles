@@ -27,5 +27,19 @@ require("config.diagnostics")
 require("config.keymaps")
 require("config.lazy")
 
+vim.api.nvim_create_user_command("Svg", function()
+    vim.cmd([[%s#svg#Svg#geI]])
+    vim.cmd([[%s#path#Path#geI]])
+    vim.cmd([[%s#\r##g]])
+    vim.cmd([[%s#React.SVGProps<SVGSVGElement>#SvgProps#ge]])
+    vim.cmd([[%s/\s*xmlns="[^"]*"//g]])
+    vim.cmd([[%s#const #export const #geI]])
+    vim.api.nvim_buf_set_lines(0, 0, 0, false, {
+        [[import { Svg, Path, SvgProps } from 'react-native-svg';]],
+        [[]]
+    })
+    vim.cmd([[noh]])
+end, {})
+
 vim.api.nvim_set_hl(0, "SnippetTabstop", {})
 vim.api.nvim_set_hl(0, "SnippetTabstopActive", {})

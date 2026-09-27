@@ -40,6 +40,17 @@ return {
         config = function()
             require("nvim-treesitter").install(parsers)
 
+            require("nvim-treesitter").setup({
+                textobjects = {
+                    select = true,
+                    lookahead = true,
+                    keyamps = {
+                        ["at"] = "@tag.outer",
+                        ["it"] = "@tag.inner",
+                    }
+                }
+            })
+
             vim.api.nvim_create_autocmd("FileType", {
                 pattern = filetypes,
                 callback = function(args)
