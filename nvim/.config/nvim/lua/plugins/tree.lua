@@ -31,6 +31,10 @@ return {
       close_if_last_window = true,
 
       default_component_configs = {
+          file_size = { enabled = false },
+          type = { enabled = false },
+          last_modified = { enabled = false },
+          created = { enabled = false },
           indent = {
               indent_size = 2,
               with_markers = true,
