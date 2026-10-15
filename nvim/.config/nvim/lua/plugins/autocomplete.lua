@@ -3,6 +3,11 @@ return {
     version = "*",
     opts = {
         completion = {
+            accept = {
+                auto_brackets = {
+                    enabled = false
+                },
+            },
             menu = {
                 auto_show = true,
             },
