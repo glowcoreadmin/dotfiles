@@ -3,6 +3,9 @@ return {
     opts = {
         files = {
             previewer = false
+        },
+        lsp = {
+            previewer = false
         }
     },
     keys = {
@@ -11,6 +14,7 @@ return {
         { "<leader>fb", function() require("fzf-lua").buffers() end, desc = "Buffers" },
         { "<leader>fr", function() require("fzf-lua").oldfiles() end, desc = "Recent Files" },
         { "<leader>fs", function() require("fzf-lua").lsp_document_symbols() end, desc = "Find document symbols" },
+        { "<leader>ws", function() require("fzf-lua").lsp_live_workspace_symbols() end, desc = "Find workspace symbols" },
         { "gR", function() require("fzf-lua").lsp_references() end, desc = "Go to references" },
     },
 }
