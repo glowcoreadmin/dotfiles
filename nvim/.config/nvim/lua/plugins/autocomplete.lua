@@ -2,6 +2,13 @@ return {
     "saghen/blink.cmp",
     version = "*",
     opts = {
+        signature = {
+            enabled = true,
+            window = {
+                show_documentation = false,
+                border = "rounded",
+            }
+        },
         completion = {
             accept = {
                 auto_brackets = {
